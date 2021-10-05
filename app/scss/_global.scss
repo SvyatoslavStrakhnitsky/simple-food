@@ -1,0 +1,160 @@
+button {
+  background-color: transparent;
+  cursor: pointer;
+}
+
+body {
+  font-size: 20px;
+  line-height: 1.3;
+  color: $dark;
+  background-color: $silver-100;
+  @extend %rubik-400;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.category__btn.mixitup-control-active {
+  color: #fff;
+  background-color: $orange-900;
+
+  .svg path {
+    fill: #fff;
+  }
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.section {
+  padding-bottom: 116px;
+}
+
+.btn {
+  font-size: 18px;
+  letter-spacing: 0.03em;
+  color: #fff;
+  padding: 12px 32px;
+  border-radius: 6px;
+  background-color: $orange-900;
+  transition: background-color 0.5s, color 0.5s;
+
+  &:focus {
+    color: $orange-900;
+    outline-width: 0;
+    border-radius: 6px;
+    box-shadow: 0px 0px 0px 2px $orange-900;
+    background-color: rgba(255, 122, 80, 0.1);
+
+    .svg path {
+      fill: $orange-900;
+    }
+  }
+
+  &:hover {
+    color: $orange-900;
+    border-radius: 6px;
+    box-shadow: 0px 0px 0px 2px $orange-900;
+    background-color: #fff;
+
+    .svg path {
+      fill: $orange-900;
+    }
+  }
+
+  &:active {
+    color: $orange-900;
+    border-radius: 6px;
+    background-color: rgba(255, 122, 80, 0.1);
+
+    .svg path {
+      fill: $orange-900;
+    }
+  }
+}
+
+.logo {
+  display: block;
+  transition: opacity 0.3s linear;
+
+  &:focus {
+    outline-width: 0;
+    border-radius: 6px;
+    box-shadow: 0px 0px 0px 2px $orange-900;
+  }
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
+}
+
+.title {
+  text-align: center;
+  font-size: 36px;
+  color: $darkBlue-900;
+  margin-bottom: 60px;
+  @extend %rubik-500;
+}
+
+.form {
+  max-width: 200px;
+
+  .btn--form {
+    padding: 13px 38px 13px 70px;
+    letter-spacing: 0;
+    font-size: 14px;
+    @extend %rubik-500;
+    position: relative;
+  }
+
+  &__btn-img {
+    position: absolute;
+    top: 14px;
+    left: 38px;
+  }
+
+  &__input {
+    padding: 13px 15px 10px;
+    font-size: 14px;
+    border: 1px solid $gray;
+    border-radius: 5px;
+    width: 100%;
+    margin-bottom: 12px;
+
+    &:focus {
+      outline-width: 0;
+      border-radius: 6px;
+      box-shadow: 0px 0px 0px 2px $orange-900;
+    }
+
+    &::placeholder {
+      color: $gray;
+    }
+
+    &:hover::placeholder {
+      color: $darkBlue-900;
+    }
+  }
+}
+
+.svg path,
+.svg ellipse {
+  transition: stroke 0.5s, fill 0.5s;
+}
