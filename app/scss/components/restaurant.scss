@@ -1,0 +1,44 @@
+.restaurant {
+  font-size: 18px;
+  font-weight: 300;
+  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  background-color: #fff;
+  padding-bottom: 27px;
+  transition: box-shadow 0.3s;
+  position: relative;
+
+  &:hover {
+    box-shadow: 0px 3px 15px rgba(255, 104, 56, 0.5);
+    border-radius: 10px;
+  }
+
+  &__img {
+    margin-bottom: 15px;
+  }
+
+  &__title {
+    padding-left: 20px;
+    font-size: 24px;
+    font-weight: 400;
+    margin-bottom: 22px;
+  }
+
+  &__time-start {
+    padding-left: 50px;
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 20px;
+      width: 22px;
+      height: 22px;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-image: url('../../images/icons/timer-icon.svg');
+    }
+  }
+}
