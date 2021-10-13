@@ -1,6 +1,6 @@
 $(function() {
 
-  $('.review__slider').slick({
+  $('.review__inner').slick({
     dots: true,
     arrows: true,
     autoplay: false,

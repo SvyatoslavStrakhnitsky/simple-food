@@ -4,13 +4,12 @@
 @import 'vars';
 @import 'global';
 @import 'components/logo.scss';
-@import 'components/button.scss';
+@import 'components/btn.scss';
 @import 'components/link.scss';
 @import 'components/product.scss';
 @import 'components/form.scss';
 @import 'components/filter.scss';
 @import 'components/restaurant.scss';
-@import 'components/slider.scss';
 
 
 .menu {
@@ -60,78 +59,75 @@
       color: $orange-900;
     }
   }
+}
 
-  &__user {
-    display: flex;
+.menu-user {
+  display: flex;
 
-    &-num {
-      display: block;
-      width: 14px;
-      height: 14px;
-      padding: 0 4px;
-      font-size: 10px;
-      line-height: 1.4;
-      border-radius: 50%;
-      color: #fff;
-      background-color: $orange-900;
-      top: 6px;
-      right: 4px;
-      position: absolute;
+  &__num {
+    display: block;
+    padding: 0 4px;
+    font-size: 10px;
+    line-height: 1.4;
+    border-radius: 50%;
+    color: #fff;
+    background-color: $orange-900;
+    top: 6px;
+    left: 25px;
+    position: absolute;
+  }
+
+  &__item {
+    width: 44px;
+    height: 44px;
+
+    &:first-child {
+      margin-right: 9px
     }
+  }
 
-    &-item {
-      width: 44px;
-      height: 44px;
+  &__img {
+    stroke: $darkBlue-900;
+  }
 
-      &:first-child {
-        margin-right: 9px
-      }
-    }
+  &__btn {
+    width: 100%;
+    height: 100%;
+    border-radius: 6px;
+    transition: background-color 0.3s, color 0.3s;
+    position: relative;
 
-    &-btn {
-      width: 100%;
-      height: 100%;
+    &:focus {
+      background-color: rgba(255, 122, 80, 0.1);
+      outline-width: 0;
       border-radius: 6px;
-      transition: background-color 0.3s, color 0.3s;
-      position: relative;
+      box-shadow: 0px 0px 0px 2px $orange-900;
+    }
 
-      &:focus {
-        outline-width: 0;
-        box-shadow: 0px 0px 0px 2px $orange-900;
-        background-color: rgba(255, 122, 80, 0.1);
+    &:hover {
+      background-color: $orange-900;
+      stroke: #fff;
+
+      .menu-user__num {
+        color: $orange-900;
+        background-color: #fff;
       }
 
-      &:hover {
-        background-color: $orange-900;
-
-        .menu__user-num {
-          color: $orange-900;
-          background-color: #fff;
-        }
-
-        svg path {
-          stroke: #fff;
-        }
-
-        svg ellipse {
-          stroke: #fff;
-        }
+      .menu-user__img {
+        stroke: #fff;
       }
+    }
 
-      &:active {
-        background-color: rgba(255, 122, 80, 0.1);
+    &:active {
+      background-color: rgba(255, 122, 80, 0.1);
 
-        svg path {
-          stroke: $dark;
-        }
-
-        svg ellipse {
-          stroke: $dark;
-        }
+      .menu-user__img {
+        stroke: $darkBlue-900;
       }
     }
   }
 }
+
 
 .hero {
 
@@ -230,39 +226,32 @@
     margin-bottom: 40px;
   }
 
+  &__item {
+    font-size: 24px;
+    line-height: 1.5;
+    padding-left: 63px;
+    color: $darkBlue-900;
+    position: relative;
+  }
+
   &__item:not(:last-child) {
     margin-bottom: 20px;
   }
 
-  &__advantage {
-    font-size: 24px;
-    line-height: 1.5;
-    padding: 4px 0 4px 64px;
-    color: $darkBlue-900;
-    position: relative;
+  &__icon {
+    position: absolute;
+    left: 0;
 
-    &::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 34px;
-      height: 34px;
-      background-position: center center;
-      background-repeat: no-repeat;
-      background-size: cover;
+    &--clock {
+      fill: $orange-900;
     }
 
-    &--clock::before {
-      background-image: url('../images/icons/clock-icon.svg');
+    &--delivery {
+      fill: #00aaff;
     }
 
-    &--delivery::before {
-      background-image: url('../images/icons/delivery-icon.svg');
-    }
-
-    &--restaurant::before {
-      background-image: url('../images/icons/resturent-icon.svg');
+    &--restaurant {
+      fill: #ff2222;
     }
   }
 }
@@ -301,28 +290,16 @@
     margin-bottom: 30px;
     position: relative;
 
-    &::before {
-      content: '';
+    .start-qoute {
       position: absolute;
-      width: 24px;
-      height: 19px;
+      fill: $gray;
       transform: translateX(-40px);
-      background-position: center center;
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-image: url('../images/icons/quotes-1.svg');
     }
 
-    &::after {
-      content: '';
+    .end-qoute {
       position: absolute;
-      width: 24px;
-      height: 19px;
+      fill: $gray;
       transform: translate(129px, 14px);
-      background-position: center center;
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-image: url('../images/icons/quotes-2.svg');
     }
   }
 
@@ -330,14 +307,15 @@
     display: block;
     font-weight: 500;
     font-style: normal;
-    margin-bottom: 15px;
     color: $orange-900;
   }
 
   &__subname {
     display: block;
     font-size: 14px;
+    line-height: 1;
     font-weight: 400;
+    padding-top: 17px;
     color: $dark;
   }
 }
@@ -372,24 +350,20 @@
     margin-right: 30px;
   }
 
-  &__link--store {
+  &__link {
     display: block;
-    height: 40px;
-    width: 120px;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-image: url('../images/icons/app-store-icon.svg');
-  }
 
-  &__link--google {
-    display: block;
-    height: 40px;
-    width: 135px;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-image: url('../images/icons/google-play-icon.svg');
+    &--store {
+      height: 40px;
+      width: 120px;
+      background-image: url('../images/icons/app-store-icon.svg');
+    }
+
+    &--google {
+      height: 40px;
+      width: 135px;
+      background-image: url('../images/icons/google-play-icon.svg');
+    }
   }
 }
 
@@ -401,6 +375,7 @@
   }
 
   .logo {
+    display: inline-block;
     margin-bottom: 30px;
   }
 
@@ -431,51 +406,9 @@
     letter-spacing: 0.01em;
   }
 
-  &__contacts {
-    margin-right: 60px;
-
-    &-item {
-      margin-right: 20px;
-      margin-bottom: 14px;
-    }
-
-    &-link {
-      display: block;
-      padding-left: 31px;
-      font-size: 16px;
-      line-height: 2;
-      font-style: normal;
-      color: $dark;
-      position: relative;
-
-      &::before {
-        content: '';
-        position: absolute;
-        width: 24px;
-        height: 24px;
-        top: 3px;
-        left: 0;
-        background-size: cover;
-        background-position: center center;
-        background-repeat: no-repeat;
-      }
-
-      &--location::before {
-        background-image: url('../images/icons/location-icon.svg');
-      }
-
-      &--phone::before {
-        background-image: url('../images/icons/phone-icon.svg');
-      }
-
-      &--message::before {
-        background-image: url('../images/icons/message-icon.svg');
-      }
-    }
-  }
-
   &__socials {
     display: flex;
+    flex-wrap: wrap;
   }
 
   &__element {
@@ -485,31 +418,29 @@
     position: relative;
   }
 
+  &__img {
+    fill: $dark;
+    @extend %position-center;
+  }
+
   &__url {
     display: block;
     width: 100%;
     height: 100%;
     position: relative;
 
-    svg {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%)
-    }
-
     &:focus {
       outline-width: 0;
     }
 
     &:hover {
-      svg path {
+      .footer__img {
         fill: #fff;
       }
     }
 
     &:active {
-      svg path {
+      .footer__img {
         fill: $orange-900;
       }
     }
@@ -528,7 +459,6 @@
 
 
     &:focus::before {
-      color: $orange-900;
       outline-width: 0;
       border-radius: 50%;
       box-shadow: 0px 0px 0px 2px $orange-900;
@@ -536,23 +466,15 @@
     }
 
     &:hover::before {
-      color: $orange-900;
       border-radius: 50%;
       box-shadow: 0px 0px 0px 2px $orange-900;
       background-color: $orange-900;
     }
 
     &:active::before {
-      color: $orange-900;
       border-radius: 50%;
       background: rgba(255, 122, 80, 0.1);
     }
-  }
-
-  &__link-img {
-    position: absolute;
-    top: 12px;
-    left: 12px;
   }
 
   &__bottom {
@@ -561,5 +483,31 @@
     text-align: center;
     padding: 30px 0;
     border-top: 1px solid rgba(194, 194, 194, 0.2);
+  }
+}
+
+.footer-contacts {
+  margin-right: 60px;
+
+  &__item {
+    margin-right: 20px;
+    margin-bottom: 14px;
+  }
+
+  &__link {
+    display: block;
+    padding-left: 31px;
+    font-size: 16px;
+    line-height: 2;
+    font-style: normal;
+    color: $dark;
+    position: relative;
+  }
+
+  &__img {
+    position: absolute;
+    top: 3px;
+    left: 0;
+    stroke: $dark;
   }
 }

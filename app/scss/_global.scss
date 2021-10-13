@@ -12,6 +12,11 @@ button {
   cursor: pointer;
 }
 
+svg {
+  fill: none;
+  transition: stroke 0.5s, fill 0.5s;
+}
+
 .sr-only {
   position: absolute;
   width: 1px;
@@ -43,7 +48,146 @@ button {
   margin-bottom: 45px;
 }
 
-svg path,
-svg ellipse {
-  transition: stroke 0.5s, fill 0.5s;
+.slick-dots {
+  display: flex;
+  align-self: flex-start;
+  justify-content: center;
+  padding-bottom: 10px;
+  position: relative;
+
+  & li:not(:last-child) {
+    margin-right: 15px;
+  }
+
+  & li:last-child {
+    margin-right: 22px;
+  }
+
+  button {
+    font-size: 0;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: $gray;
+    transition: color 0.3s, background-color 0.3s;
+
+    &:focus {
+      outline-width: 0;
+      border-radius: 50%;
+      background-color: $gray;
+      box-shadow: 0px 0px 0px 2px $orange-900;
+    }
+
+    &:hover {
+      outline-width: 0;
+      border-radius: 50%;
+      background-color: #FFF2ED;
+      box-shadow: 0px 0px 0px 2px $orange-900;
+    }
+
+    &:active {
+      background-color: #FFAE94;
+    }
+  }
+}
+
+.slick-active button {
+  background-color: $orange-900;
+}
+
+.slick-prev {
+  display: block;
+  font-size: 0;
+  width: 37px;
+  height: 37px;
+  border: 3px solid $gray;
+  border-radius: 50%;
+  background-color: #fff;
+  margin-right: 22px;
+  position: relative;
+  cursor: pointer;
+  transition: border 0.5s, background-color 0.3s;
+
+  .slick-left {
+    fill: $gray;
+    @extend %position-center;
+  }
+
+  &:focus {
+    outline-width: 0;
+    border-radius: 50%;
+    box-shadow: 0px 0px 0px 2px $orange-900;
+  }
+
+  &:hover {
+    border-radius: 50%;
+    border-color: $orange-900;
+    background-color: #FFF2ED;
+
+    .slick-left {
+      fill: $orange-900;
+    }
+  }
+
+  &:active {
+    border-radius: 50%;
+    border-color: #FFF2ED;
+    background-color: #FFF2ED;
+
+    .slick-left {
+      fill: $orange-900;
+    }
+  }
+}
+
+.slick-next {
+  display: block;
+  font-size: 0;
+  width: 37px;
+  height: 37px;
+  border: 3px solid $gray;
+  border-radius: 50%;
+  background-color: #fff;
+  order: 1;
+  position: relative;
+  cursor: pointer;
+  transition: border 0.5s, background-color 0.3s;
+
+  .slick-right {
+    fill: $gray;
+    @extend %position-center;
+  }
+
+  &:focus {
+    outline-width: 0;
+    border-radius: 50%;
+    box-shadow: 0px 0px 0px 2px $orange-900;
+  }
+
+  &:hover {
+    border-radius: 50%;
+    border-color: $orange-900;
+    background-color: #FFF2ED;
+
+    .slick-right {
+      fill: $orange-900;
+    }
+  }
+
+  &:active {
+    border-radius: 50%;
+    border-color: #FFF2ED;
+    background-color: #FFF2ED;
+
+    .slick-right {
+      fill: $orange-900;
+    }
+  }
+}
+
+.arrows {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }

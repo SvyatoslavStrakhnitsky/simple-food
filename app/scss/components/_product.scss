@@ -11,6 +11,21 @@
     box-shadow: 0px 0px 0px 1px $orange-900;
   }
 
+  &__link {
+    display: block;
+    color: $darkBlue-900;
+
+    &:focus {
+      outline-width: 0;
+      border-radius: 6px;
+      box-shadow: 0px 0px 0px 3px $orange-900;
+    }
+
+    &:active {
+      opacity: 0.5;
+    }
+  }
+
   &__btn {
     font-size: 14px;
     padding: 7px 15px;
